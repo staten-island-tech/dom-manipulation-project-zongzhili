@@ -6,11 +6,6 @@ const DOMSelectors = {
   form: document.querySelector(".form"),
 };
 
-let student = {
-  name: "Ryan",
-  age: 15,
-  girlfriend: true,
-};
 DOMSelectors.button.addEventListener("click", function (event) {
   console.log(event.target.parentElement);
   event.target.style.backgroundColor = "red";
