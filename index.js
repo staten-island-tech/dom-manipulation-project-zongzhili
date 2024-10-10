@@ -6,10 +6,10 @@ const DOMSelectors = {
   form: document.querySelector(".form"),
 };
 
-DOMSelectors.button.addEventListener("click", function (event) {
-  console.log(event.target.parentElement);
-  event.target.style.backgroundColor = "red";
-});
+// DOMSelectors.button.addEventListener("click", function (event) {
+//   console.log(event.target.parentElement);
+//   event.target.style.backgroundColor = "red";
+// });
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
   console.log(document.querySelector("input").value);
