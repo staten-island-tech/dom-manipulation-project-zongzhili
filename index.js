@@ -53,5 +53,26 @@
 const DOMSelectors = {
   button: document.getElementById("btn"),
   text: document.getElementById("#text"),
+  points: document.querySelectorAll(".point"),
+  box: document.getElementById("big-black-box"),
 };
-console.log(DOMSelectors.button);
+function backgroundAndText(background, text) {
+  background.style.backgroundColor = "red";
+  text.textContent = "This is now a big red box";
+  text.style.fontSize = "40px";
+}
+
+DOMSelectors.button.addEventListener("click", function () {
+  backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+});
+
+function changeLi() {
+  DOMSelectors.points.ForEach((point) => {
+    console.log(point);
+  });
+}
+//const Album = makeAlbum()
+//addcard(album)
+//clear fields
+//add remove buttons
+//h1.remove (how or when u add remove buttons is important)

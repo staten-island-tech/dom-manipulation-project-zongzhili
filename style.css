@@ -3,7 +3,7 @@ html, body, * {
     margin: 0;
     box-sizing: border-box;
 }
-h1, form {
+h1, form, li, p {
     text-align: center;
 }
 img {
@@ -21,3 +21,6 @@ img {
     margin-bottom: 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.5);
 } */
+ button{
+    margin: 0 auto;
+ }
