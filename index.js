@@ -49,28 +49,14 @@
 //insert card with object onto HTML
 
 //add event listener for remove button in JS
-
 const DOMSelectors = {
   button: document.getElementById("btn"),
-  text: document.getElementById("#text"),
-  points: document.querySelectorAll(".point"),
-  box: document.getElementById("big-black-box"),
+  box: document.getElementById("container-box"),
+  input: document.getElementById(`#input`),
 };
-function backgroundAndText(background, text) {
-  background.style.backgroundColor = "red";
-  text.textContent = "This is now a big red box";
-  text.style.fontSize = "40px";
-}
+// const cat = "moew";
+// DOMSelectors.box.insertAdjacentHTML("beforeend", `<h1>We are now ${cat}</h1>`);
 
-DOMSelectors.button.addEventListener("click", function () {
-  backgroundAndText(DOMSelectors.box, DOMSelectors.text);
-});
-
-function changeLi() {
-  DOMSelectors.points.ForEach((point) => {
-    console.log(point);
-  });
-}
 //const Album = makeAlbum()
 //addcard(album)
 //clear fields
