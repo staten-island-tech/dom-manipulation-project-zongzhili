@@ -8,9 +8,7 @@
 
 //add event listener for remove button in JS
 const DOMSelectors = {
-  button: document.getElementById("btn"),
   box: document.getElementById("container-box"),
-  input: document.getElementById("input"),
   form: document.querySelector("#albumForm"),
   singer: document.getElementById("singer"),
   cover: document.getElementById("cover"),
