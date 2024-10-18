@@ -1,45 +1,3 @@
-// const DOMSelectors = {
-//   header: document.querySelector("h1"),
-//   item: document.querySelector("li"),
-//   cardHeader: document.querySelector(".card-header"),
-//   button: document.querySelector(".btn"),
-//   form: document.querySelector(".form"),
-// };
-
-// DOMSelectors.button.addEventListener("click", function (event) {
-//   console.log(event.target.parentElement);
-//   event.target.style.backgroundColor = "red";
-// });
-// DOMSelectors.form.addEventListener("click", function (event) {
-//   event.preventDefault();
-
-//   const singer = document.getElementById("singer").value;
-//   const album = document.getElementById("album").value;
-//   const cover = document.getElementById("cover").value;
-
-//   console.log("Artist Name:", singer);
-//   console.log("Album Name:", album);
-//   console.log("Album Cover Link:", cover);
-// });
-// //select all buttons as nodelist (can use for each)
-// const buttons = document.querySelectorAll("button");
-// //make array from buttons if i want to use filter etc.
-// const newButtons = Array.from(buttons);
-// //iterate through array and change each buttons color
-// newButtons.forEach((button) => (button.style.backgroundColor = "blue"));
-
-// newButtons.forEach((button) =>
-//   button.addEventListener("click", function (event) {
-//     console.log(event.target.textContent);
-//   })
-// );
-// let student = 3;
-// DOMSelectors.container.insertAdjacentHTML(
-//   "beforeend",
-//   `<div class="card">
-//   <!--<h2 class="card header">${student}</h2> <p>owefoinmdoanksdxcvklmxlasd</p>--></div>`
-// );
-
 //create the HTML for inputs, cards, and container aka where the cards go
 
 //select/query the HTML form and get values from inputs
@@ -52,10 +10,29 @@
 const DOMSelectors = {
   button: document.getElementById("btn"),
   box: document.getElementById("container-box"),
-  input: document.getElementById(`#input`),
+  input: document.getElementById("input"),
+  form: document.querySelector("#albumForm"),
+  singer: document.getElementById("singer"),
+  cover: document.getElementById("cover"),
+  album: document.getElementById("album"),
 };
-// const cat = "moew";
-// DOMSelectors.box.insertAdjacentHTML("beforeend", `<h1>We are now ${cat}</h1>`);
+
+DOMSelectors.form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let singer = DOMSelectors.singer.value;
+  let cover = DOMSelectors.cover.value;
+  let album = DOMSelectors.album.value;
+
+  DOMSelectors.box.insertAdjacentHTML(
+    "beforeend",
+    `<p>Artist: ${singer}, Album: ${album}, Cover: ${cover}</p>`
+  );
+
+  DOMSelectors.singer.value = "";
+  DOMSelectors.cover.value = "";
+  DOMSelectors.album.value = "";
+});
 
 //const Album = makeAlbum()
 //addcard(album)
