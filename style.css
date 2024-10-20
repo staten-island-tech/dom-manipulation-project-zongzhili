@@ -54,6 +54,7 @@ img {
 
 #albumForm{
     margin-bottom: 20px;
+    text-align: center;
 }
 
 input[type="submit"] {
