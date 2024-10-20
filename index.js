@@ -17,7 +17,6 @@ function createAlbum() {
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  // Create an album object
   const newAlbum = createAlbum();
 
   DOMSelectors.box.insertAdjacentHTML(
