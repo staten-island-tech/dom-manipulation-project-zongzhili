@@ -57,7 +57,7 @@ img {
     text-align: center;
 }
 
-input[type="submit"] {
+.btn {
     margin-top: 20px;
     padding: 10px;
     border: 2px solid #0c8810;
