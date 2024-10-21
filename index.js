@@ -25,12 +25,21 @@ DOMSelectors.form.addEventListener("submit", function (event) {
         <p>Artist: ${newAlbum.singer}</p>
         <p>Album: ${newAlbum.album}</p>
         <img src="${newAlbum.cover}" alt="${newAlbum.album} cover">
+        <button class="remove-button">Remove</button>
       </div>`
   );
 
   DOMSelectors.singer.value = "";
   DOMSelectors.cover.value = "";
   DOMSelectors.album.value = "";
+
+  const removeButtons = document.querySelectorAll(".remove-button");
+  removeButtons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      const objectToRemove = event.target.parentElement;
+      objectToRemove.remove();
+    });
+  });
 });
 
 //const Album = makeAlbum()
