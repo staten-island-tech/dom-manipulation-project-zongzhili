@@ -75,6 +75,6 @@ button {
     padding: 10px;
 }
 
-input[type="submit"]:hover, button:hover {
+.btn:hover, button:hover {
     transform: scale(1.5);
 }
