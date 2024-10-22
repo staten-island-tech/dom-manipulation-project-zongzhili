@@ -1,44 +1,52 @@
-// const DOMSelectors = {
-//   header: document.querySelector("h1"),
-//   item: document.querySelector("li"),
-//   cardHeader: document.querySelector(".card-header"),
-//   button: document.querySelector(".btn"),
-//   form: document.querySelector(".form"),
-// };
+const DOMSelectors = {
+  box: document.getElementById("container-box"),
+  form: document.querySelector("#albumForm"),
+  singer: document.getElementById("singer"),
+  cover: document.getElementById("cover"),
+  album: document.getElementById("album"),
+};
 
-// DOMSelectors.button.addEventListener("click", function (event) {
-//   console.log(event.target.parentElement);
-//   event.target.style.backgroundColor = "red";
-// });
-// DOMSelectors.form.addEventListener("click", function (event) {
-//   event.preventDefault();
+function createAlbum() {
+  return {
+    singer: DOMSelectors.singer.value,
+    cover: DOMSelectors.cover.value,
+    album: DOMSelectors.album.value,
+  };
+}
 
-//   const singer = document.getElementById("singer").value;
-//   const album = document.getElementById("album").value;
-//   const cover = document.getElementById("cover").value;
+DOMSelectors.form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-//   console.log("Artist Name:", singer);
-//   console.log("Album Name:", album);
-//   console.log("Album Cover Link:", cover);
-// });
-// //select all buttons as nodelist (can use for each)
-// const buttons = document.querySelectorAll("button");
-// //make array from buttons if i want to use filter etc.
-// const newButtons = Array.from(buttons);
-// //iterate through array and change each buttons color
-// newButtons.forEach((button) => (button.style.backgroundColor = "blue"));
+  const newAlbum = createAlbum();
 
-// newButtons.forEach((button) =>
-//   button.addEventListener("click", function (event) {
-//     console.log(event.target.textContent);
-//   })
-// );
-// let student = 3;
-// DOMSelectors.container.insertAdjacentHTML(
-//   "beforeend",
-//   `<div class="card">
-//   <!--<h2 class="card header">${student}</h2> <p>owefoinmdoanksdxcvklmxlasd</p>--></div>`
-// );
+  DOMSelectors.box.insertAdjacentHTML(
+    "beforeend",
+    `<div class="card">
+        <p>Artist: ${newAlbum.singer}</p>
+        <p>Album: ${newAlbum.album}</p>
+        <img src="${newAlbum.cover}" alt="${newAlbum.album} cover">
+        <button class="remove-button">Remove</button>
+      </div>`
+  );
+
+  DOMSelectors.singer.value = "";
+  DOMSelectors.cover.value = "";
+  DOMSelectors.album.value = "";
+
+  const removeButtons = document.querySelectorAll(".remove-button");
+  removeButtons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      const objectToRemove = event.target.parentElement;
+      objectToRemove.remove();
+    });
+  });
+});
+
+//const Album = makeAlbum()
+//addcard(album)
+//clear fields
+//add remove buttons
+//h1.remove (how or when u add remove buttons is important)
 
 //create the HTML for inputs, cards, and container aka where the cards go
 
@@ -49,6 +57,7 @@
 //insert card with object onto HTML
 
 //add event listener for remove button in JS
+<<<<<<< HEAD
 const DOMSelectors = {
   button: document.getElementById("btn"),
   box: document.getElementById("container-box"),
@@ -88,3 +97,5 @@ DOMSelectors.form.addEventListener("submit", function (event) {
 //clear fields
 //add remove buttons
 //h1.remove (how or when u add remove buttons is important)
+=======
+>>>>>>> 576aef56770d374dcc03e4c41638798bd7991a3e
