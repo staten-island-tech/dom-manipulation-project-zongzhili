@@ -52,8 +52,34 @@
 const DOMSelectors = {
   button: document.getElementById("btn"),
   box: document.getElementById("container-box"),
-  input: document.getElementById(`#input`),
+  input: document.getElementById("input"),
+  form: document.querySelector("form"),
+  singer: document.getElementById("singer"),
+  cover: document.getElementById("cover"),
+  album: document.getElementById("album"),
 };
+
+DOMSelectors.button.addEventListener("click", function () {
+  let input = DOMSelectors.input.value;
+  DOMSelectors.box.insertAdjacentHTML("beforeend", `<p>${input}</p>`);
+  DOMSelectors.input.value = "";
+});
+
+DOMSelectors.form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let singerValue = DOMSelectors.singer.value;
+  let coverValue = DOMSelectors.cover.value;
+  let albumValue = DOMSelectors.album.value;
+
+  DOMSelectors.box.insertAdjacentHTML(
+    "beforeend",
+    `<p>Artist: ${singerValue}, Album: ${albumValue}, Cover: ${coverValue}</p>`
+  );
+  DOMSelectors.singer.value = "";
+  DOMSelectors.cover.value = "";
+  DOMSelectors.album.value = "";
+});
 // const cat = "moew";
 // DOMSelectors.box.insertAdjacentHTML("beforeend", `<h1>We are now ${cat}</h1>`);
 
