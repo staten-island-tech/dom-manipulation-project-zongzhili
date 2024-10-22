@@ -57,7 +57,6 @@ DOMSelectors.form.addEventListener("submit", function (event) {
 //insert card with object onto HTML
 
 //add event listener for remove button in JS
-<<<<<<< HEAD
 const DOMSelectors = {
   button: document.getElementById("btn"),
   box: document.getElementById("container-box"),
@@ -97,5 +96,3 @@ DOMSelectors.form.addEventListener("submit", function (event) {
 //clear fields
 //add remove buttons
 //h1.remove (how or when u add remove buttons is important)
-=======
->>>>>>> 576aef56770d374dcc03e4c41638798bd7991a3e
